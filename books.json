@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "title": "To Kill a Mockingbird",
+    "author": "Harper Lee",
+    "category": "Classic Literature",
+    "price": 15,
+    "image": "1.jpg"
+  },
+  {
+    "id": 2,
+    "title": "1984",
+    "author": "George Orwell",
+    "category": "Dystopian Fiction",
+    "price": 12,
+    "image": "2.jpeg"
+  },
+  {
+    "id": 3,
+    "title": "Pride and Prejudice",
+    "author": "Jane Austen",
+    "category": "Romantic Fiction",
+    "price": 18,
+    "image": "3.jpeg"
+  },
+  {
+    "id": 4,
+    "title": "The Catcher in the Rye",
+    "author": "J.D. Salinger",
+    "category": "Coming-of-Age",
+    "price": 14,
+    "image": "4.jpeg"
+  },
+  {
+    "id": 5,
+    "title": "Brave New World",
+    "author": "Aldous Huxley",
+    "category": "Science Fiction",
+    "price": 20,
+    "image": "5.jpg"
+  },
+  {
+    "id": 6,
+    "title": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "category": "American Classics",
+    "price": 17,
+    "image": "book/The Lord of the Rings.jpg"
+  },
+  {
+    "id": 7,
+    "title": "Lord of the Rings",
+    "author": "J.R.R. Tolkien",
+    "category": "Fantasy",
+    "price": 25,
+    "image": "book/The Lord of the Rings.jpg"
+  },
+  {
+    "id": 8,
+    "title": "The Hobbit",
+    "author": "J.R.R. Tolkien",
+    "category": "Fantasy",
+    "price": 22,
+    "image": "book/The Hobbit.jpg"
+  },
+  {
+    "id": 9,
+    "title": "The Alchemist",
+    "author": "Paulo Coelho",
+    "category": "Philosophical Fiction",
+    "price": 16,
+    "image": "book/The Alchemist.jpg"
+  },
+  {
+    "id": 10,
+    "title": "The Hunger Games",
+    "author": "Suzanne Collins",
+    "category": "Young Adult",
+    "price": 19,
+    "image": "1.jpg"
+  },
+  {
+    "id": 11,
+    "title": "Harry Potter and the Sorcerer's Stone",
+    "author": "J.K. Rowling",
+    "category": "Fantasy",
+    "price": 21,
+    "image": "5.jpg"
+  },
+  {
+    "id": 12,
+    "title": "The Da Vinci Code",
+    "author": "Dan Brown",
+    "category": "Mystery",
+    "price": 18,
+    "image": "1.jpg"
+  },
+  {
+    "id": 13,
+    "title": "The Road",
+    "author": "Cormac McCarthy",
+    "category": "Post-Apocalyptic Fiction",
+    "price": 16,
+    "image": "5.jpg"
+  },
+  {
+    "id": 14,
+    "title": "The Hitchhiker's Guide to the Galaxy",
+    "author": "Douglas Adams",
+    "category": "Science Fiction",
+    "price": 13,
+    "image": "1.jpg"
+  },
+  {
+    "id": 15,
+    "title": "The Picture of Dorian Gray.jpg",
+    "author": "Herman Melville",
+    "category": "Adventure",
+    "price": 20,
+    "image": "book/The Picture of Dorian Gray.jpg"
+  }
+]

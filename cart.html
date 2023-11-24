@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart</title>
+  <!-- Link Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Link Sass file -->
+  <link href="styles.css" rel="stylesheet">
+  <script defer src="script.js"></script>
+</head>
+<style>
+  /* Custom styles for cart items */
+  #cartItems {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    margin-top: 20px;
+  }
+
+  .cart-item {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+  .cart-item:hover{
+    background-color: #ccc;
+  }
+
+  .cart-item p {
+    margin: 5px 0;
+  }
+
+  .cart-item hr {
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+
+  #totalAmount {
+    font-weight: bold;
+  }
+</style>
+<body>
+
+  <!-- Navbar  -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/Homepage.html">Library System</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/categories.html">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Book Categories
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <!-- Dropdown items will be dynamically populated -->
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Cart</a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link" href="/contact.html">Contact Us</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+  <!-- Cart Items Section -->
+  <div class="container mt-4">
+    <h2>Shopping Cart</h2>
+    <div id="cartItems" class="row">
+      <!-- Cart items will be displayed here -->
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-md-6 offset-md-6">
+        <p><strong>Total Amount:</strong> $<span id="totalAmount">0</span></p>
+        <a class="btn btn-primary" href="/payment.html">Proceed to Payment</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Link Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+<script>
+  // Function to retrieve cart items from local storage and display them
+  function displayCartItems() {
+    const cartItemsDiv = document.getElementById("cartItems");
+    const totalAmount = document.getElementById("totalAmount");
+
+    // Retrieve cart items from local storage
+    const cartItems = JSON.parse(localStorage.getItem("cart"));
+
+    // Initialize total amount
+    let total = 0;
+
+    // Display each cart item with a remove button
+    cartItems.forEach((item, index) => {
+      const cartItem = document.createElement("div");
+      cartItem.classList.add("cart-item");
+      cartItem.innerHTML = `
+        <p>Title: ${item.title}</p>
+        <p>Author: ${item.author}</p>
+        <p>Price: $${item.price}</p>
+        <button class="btn btn-danger" onclick="removeItem(${index})">Remove</button>
+        <hr>
+      `;
+      cartItemsDiv.appendChild(cartItem);
+
+      // Calculate total amount
+      total += parseFloat(item.price);
+    });
+
+    // Display the total amount
+    totalAmount.textContent = total.toFixed(2);
+  }
+
+  // Function to remove an item from the cart
+  function removeItem(index) {
+    let cartItems = JSON.parse(localStorage.getItem("cart"));
+
+    // Remove the item from the cart array
+    cartItems.splice(index, 1);
+
+    // Update the cart in local storage
+    localStorage.setItem("cart", JSON.stringify(cartItems));
+
+    // Refresh the cart display
+    location.reload();
+  }
+
+  // Call function to display cart items when the cart page loads
+  window.onload = function() {
+    displayCartItems();
+  };
+</script>
+
+
+</html>
